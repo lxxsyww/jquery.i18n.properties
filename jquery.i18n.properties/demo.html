@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="i18n" name='title'></title>
+    <meta id="i18n_pagename" content="message">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <style>
+        div {
+            margin: 20px;
+        }
+
+        input {
+            width: 200px;
+        }
+    </style>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="" id="skinColor">
+</head>
+<body>
+<select id="language">
+    <option value="zh-CN" data-skin="zh">中文简体</option>
+    <option value="en" data-skin="en">English</option>
+</select>
+<hr>
+<!--目前html中统计结果有6种类型，html, text, title, alt, placeholder, value, 以及这6种的组合，请按照以下格式对标签进行修改-->
+
+<!--html-->
+<div class="i18n" data-properties="htmlmsg" data-ptype="html"></div>
+
+<!--text-->
+<div class="i18n" data-properties="hellomsg1" data-ptype="text"></div>
+
+<!--title-->
+<div class="i18n" title="" data-properties="commonmsg1" data-ptype="title">请用鼠标划过我看title效果</div>
+
+<!--alt-->
+<div>
+    <img class="i18n" src="images/alt1.png" alt="" data-properties="img" data-ptype="alt">
+</div>
+
+<!--placeholder-->
+<div>
+    <input class="i18n" type="text" placeholder="" data-properties="searchPlaceholder" data-ptype="placeholder">
+</div>
+
+<!--value-->
+<div>
+    <input class="i18n" type="button" value="" data-properties="btn" data-ptype="value">
+</div>
+
+<!--text+title-->
+<div class="i18n" title="" data-properties="hellomsg2/hellomsg2" data-ptype="text/title"></div>
+
+<!--value+title-->
+<div>
+    <input class="i18n" type="button" value="" data-properties="btn/btntip" data-ptype="value/title">
+</div>
+
+<div class="i18n" data-properties="test/test" data-ptype="text/title"></div>
+
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a href="" class="i18n" data-properties="_latestActivity" data-ptype="text"></a></li>
+    <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+    <li class="layui-nav-item"><a href="">大数据</a></li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item"><a href="">社区</a></li>
+</ul>
+
+<!--其他组合情况同理-->
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<!-- 加载语言包文件 -->
+<script src="js/jquery.i18n.properties.js"></script>
+<script src="js/language.js"></script>
+<script src="layui/layui.js"></script>
+<script src="js/skin.js"></script>
+<script>
+    $(function () {
+        //js里中文处理
+        //alert($.i18n.prop('welcome'))
+    })
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function () {
+        var element = layui.element;
+
+        //…
+    });
+</script>
+
+</body>
+</html>
