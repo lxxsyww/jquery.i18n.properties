@@ -1,27 +1,27 @@
 <template>
   <div class="yc_network_coutent yc_network_coutent1" style="display: block;">
     <ul class="yc_network_nav" style="">
-      <li>
+      <li :class="{hover:index===0}" @click="addClass(0)">
         <router-link to="/personal/personalspace/SpaceHomePage">
           <p>空间首页</p>
         </router-link>
       </li>
-      <li>
+      <li :class="{hover:index===1}" @click="addClass(1)">
         <router-link to="/personal/personalspace/MyAgent">
           <p>我的待办</p>
         </router-link>
       </li>
-      <li>
+      <li :class="{hover:index===2}" @click="addClass(2)">
         <router-link to="/personal/personalspace/MyResources">
           <p>我的资源</p>
         </router-link>
       </li>
-      <li>
+      <li :class="{hover:index===3}" @click="addClass(3)">
         <router-link to="/personal/personalspace/MyApplication">
           <p>我的应用</p>
         </router-link>
       </li>
-      <li>
+      <li :class="{hover:index===4}" @click="addClass(4)">
         <router-link to="/personal/personalspace/MySocial">
           <p>我的社交</p>
         </router-link>
@@ -45,6 +45,16 @@
 
   export default {
     name: 'PersonalSpace',
+    data () {
+      return {
+        index: 0
+      }
+    },
+    methods: {
+      addClass (index) {
+        this.index = index
+      }
+    },
     components: {
       rightSide
     }
@@ -74,7 +84,7 @@
         border-left: 5px solid #fff;
         border-bottom: 1px solid #E5E8EE;
 
-        &:hover
+        &:hover, &.hover
           background: #ebf2ff;
           border-left: 5px solid #357eff;
           border-bottom: none;
