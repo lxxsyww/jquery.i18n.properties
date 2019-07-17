@@ -1,0 +1,60 @@
+/*通用属性*/
+body {
+  font: 14px "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+/*color #3C3C3C*/
+  text-decoration: none;
+}
+a:active {
+  color: #00f;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  vertical-align: bottom;
+}
+.lf {
+  float: left;
+}
+.rt {
+  float: right;
+}
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.table:before {
+  content: "";
+  display: table;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#main,
+#footer {
+  width: 1200px;
+  margin: 0 auto;
+}
